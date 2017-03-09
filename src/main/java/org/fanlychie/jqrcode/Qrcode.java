@@ -1,11 +1,11 @@
-package org.fanlychie.qrcode;
+package org.fanlychie.jqrcode;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
-import org.fanlychie.qrcode.exception.RuntimeCastException;
+import org.fanlychie.jqrcode.exception.RuntimeCastException;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

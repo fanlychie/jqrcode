@@ -1,4 +1,4 @@
-package org.fanlychie.qrcode;
+package org.fanlychie.jqrcode;
 
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
