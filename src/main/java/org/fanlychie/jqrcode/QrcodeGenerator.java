@@ -3,6 +3,7 @@ package org.fanlychie.jqrcode;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,10 +13,9 @@ import java.util.Map;
  */
 public final class QrcodeGenerator {
 
-    /**
-     * 二维码图片配置项
-     */
-    private static Map<EncodeHintType, Object> configuration;
+    private static final int DEFAULT_SIZE = 200;
+
+    private static final Map<EncodeHintType, Object> DEFAULT_HINT_TYPE_MAP = new HashMap<>();
 
     /**
      * 创建二维码图片
@@ -23,20 +23,24 @@ public final class QrcodeGenerator {
      * @param content 二维码图片内容
      * @return 返回二维码对象
      */
-    public static Qrcode createQrcode(String content) {
-        return new Qrcode(content).setConfiguration(configuration);
+    public static Qrcode generate(String content) {
+        return new Qrcode(content)
+                .size(DEFAULT_SIZE)
+                .foregroundColor(Color.BLACK)
+                .backgroundColor(Color.WHITE)
+                .config(DEFAULT_HINT_TYPE_MAP)
+                ;
+    }
+
+    static {
+        DEFAULT_HINT_TYPE_MAP.put(EncodeHintType.MARGIN, 1);
+        DEFAULT_HINT_TYPE_MAP.put(EncodeHintType.CHARACTER_SET, "UTF-8");
+        DEFAULT_HINT_TYPE_MAP.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.Q);
     }
 
     // 私有化
     private QrcodeGenerator() {
 
-    }
-
-    static {
-        configuration = new HashMap<>();
-        configuration.put(EncodeHintType.MARGIN, 1);
-        configuration.put(EncodeHintType.CHARACTER_SET, "UTF-8");
-        configuration.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
     }
 
 }
