@@ -23,7 +23,7 @@ public final class QrcodeGenerator {
      * @param content 二维码图片内容
      * @return 返回二维码对象
      */
-    public static Qrcode generate(String content) {
+    public static Qrcode create(String content) {
         return new Qrcode(content)
                 .size(DEFAULT_SIZE)
                 .foregroundColor(Color.BLACK)
