@@ -2,6 +2,23 @@
 
 基于 Zxing 开发的二维码图片工具类
 
+# 下载依赖
+
+```xml
+<repositories>
+    <repository>
+        <id>github-maven-repo</id>
+        <url>https://raw.github.com/fanlychie/maven-repo/releases</url>
+    </repository>
+</repositories>
+
+<dependency>
+    <groupId>org.fanlychie</groupId>
+    <artifactId>jqrcode</artifactId>
+    <version>1.1.0</version>
+</dependency>
+```
+
 # 样例
 
 **示例 1**
